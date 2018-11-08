@@ -8,9 +8,9 @@ cout << upper_bound(vec.begin(), vec.end(), 4) - vec.begin() << endl;//5
 map<int, string> mm;//由于stl map内部的红黑树的特性，天然具有二分查找的特性，所以stl为map提供了专门的方法
 mm.insert(std::make_pair(1,"a"));  
 mm.insert(std::make_pair(2,"b"));  
-mm.insert(std::make_pair(3,"c")); 
-mm.insert(std::make_pair(4,"d")); 
-mm.insert(std::make_pair(5,"e"));
-cout << "3 lower_bound -> " << mm.lower_bound(3)->second << endl;
+mm.insert(std::make_pair(3,"c"));  
+mm.insert(std::make_pair(4,"d"));  
+mm.insert(std::make_pair(5,"e"));  
+cout << "3 lower_bound -> " << mm.lower_bound(3)->second << endl;  
 cout << "3 upper_bound -> " << mm.upper_bound(3)->second << endl;
 ## 2. 快速幂 
