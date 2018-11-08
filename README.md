@@ -14,3 +14,9 @@ mm.insert(std::make_pair(5,"e"));
 cout << "3 lower_bound -> " << mm.lower_bound(3)->second << endl;  
 cout << "3 upper_bound -> " << mm.upper_bound(3)->second << endl;
 ## 2. 快速幂 
+求a的b次幂 ： a^b  
+  以a^11为例，正常需要a乘11次，即复杂度O(n)  
+  可以分解为求a^(2^3 + 2^0 + 2^1 + 2^1) = a^8 * a^2 * a^1
+  计算的过程为：a * a，保存临时结果a2，然后计算a2 * a2作为a4，然后计算a4 * a4作为a8，最后计算 a * a2 * a8
+  大大减少了计算次数
+  实际编码的时候注意使用long long int，防止溢出
