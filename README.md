@@ -20,3 +20,19 @@ cout << "3 upper_bound -> " << mm.upper_bound(3)->second << endl;
   计算的过程为：a * a，保存临时结果a2，然后计算a2 * a2作为a4，然后计算a4 * a4作为a8，最后计算 a * a2 * a8  
   大大减少了计算次数  
   实际编码的时候注意使用long long int，防止溢出  
+  ```c++
+  typedef long long int ll;
+  ll fpow(int a, int b)
+  {
+      ll res = 1;
+     ll tmp = a;
+      while(b != 0){
+          if ((b & 1) != 0){
+              res *= tmp;
+          }
+          tmp *= tmp;
+          b = (b >> 1);
+      }
+      return res;
+ }
+ ```
