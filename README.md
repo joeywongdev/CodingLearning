@@ -38,3 +38,10 @@
         return res;
     }
  ```
+## 3. c++11智能指针  
+unique_ptr : unique_ptr持有对对象的独有权，同一时刻只能有一个unique_ptr指向给定对象（通过禁止拷贝语义、只有移动语义来实现）  
+             unique_ptr指针本身的生命周期：从unique_ptr指针创建时开始，直到离开作用域  
+             离开作用域时，若其指向对象，则将其所指对象销毁(默认使用delete操作符，用户可指定其他操作)  
+shared_ptr : 这个比较常用，不解释了
+weak_ptr   : 配合shared_ptr使用，它可以从一个shared_ptr或另一个weak_ptr对象构造，它的构造和析构不会引起引用计数的增加或减少。  
+             没有重载 * 和 -> 但可以使用lock获得一个可用的shared_ptr对象。  
