@@ -47,7 +47,7 @@ weak_ptr   : 配合shared_ptr使用，它可以从一个shared_ptr或另一个we
              没有重载 * 和 -> 但可以使用lock获得一个可用的shared_ptr对象。  
 ## 4. c++11, load entire text file  
   ```c++
-    const std::string& load(const std::string& filename) {
+    std::string load(const std::string& filename) {
         std::ifstream file(filename);
         return std::string{std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>()};
     }
